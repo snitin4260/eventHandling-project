@@ -1,12 +1,11 @@
 /* constants for all dom elements
 */
-
 const toggleButton = document.querySelector(".toggle");
 const list =document.querySelector(".list");
 const listItems = document.querySelectorAll("li");
 const listUl =document.querySelector("ul.trial");
 const descriptionInput =document.querySelector("input.description");
-const deccriptionButton = document.querySelector("button.description");
+const descriptionButton = document.querySelector("button.description");
 const all = document.querySelectorAll(".description");
 const heading =document.querySelector("#myHeading");
 const descriptionPara = document.querySelector("p.description");
@@ -14,13 +13,13 @@ const buttonItem =document.querySelector(".addItemButton");
 const inputItem =document.querySelector(".addItemInput");
 const removeButton = document.querySelector(".removeItem");
 const listUlChildren = listUl.children;
+
 window.addEventListener("load",()=> {
   inputItem.focus();
-
 });
 
-// add buttons(up,down,remove) to li getting added dynamically through add item button
-// as well as lisitems already present in ul
+// add buttons(up,down,remove) to li added dynamically through  buttonItem (button)
+// as well as lisitems already present in ul initially.
 
 function addButtons(li) {
   let length= document.querySelectorAll("ul.trial li").length;
@@ -53,8 +52,8 @@ for(let i=0;i<listUlChildren.length;i++) {
 function removeButtons(li) {
   while(li.firstElementChild) {
     li.removeChild(li.firstElementChild);
-  }
 
+  }
 }
 
 function refreshButtons(li) {
@@ -109,7 +108,7 @@ toggleButton.addEventListener("click", () => {
    }
 });
                         
-deccriptionButton.addEventListener("click",() => {
+descriptionButton.addEventListener("click",() => {
   descriptionPara.innerHTML=descriptionInput.value+":";
 });
   
@@ -121,12 +120,12 @@ buttonItem.addEventListener("click",()=> {
         addButtons(li);
         ul.appendChild(li);
         if(li.previousElementSibling)               //when you are gonna add first item in list after deleting all items(1)
-        refreshButtons(li.previousElementSibling); //check whether its there.(2 end)
+          refreshButtons(li.previousElementSibling); //check whether its there.(2 end)
         refreshButtons(li);      //for cases when a new li is added when only a single li is there in  (1)
         inputItem.value= "";     // ul. In that case when new li was added,it has only a remove button. (2 end)
         
       }
-  });
+});
   
 
   
