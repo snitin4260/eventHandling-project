@@ -27,6 +27,7 @@ li {
   margin-bottom: .35em;
   display: flex;
   align-items: center;
+  justify-content: space-around;
 }
 input,
 button {
@@ -81,6 +82,9 @@ li button {
 }
 @media all and (max-width: 470px) {
   button.description {
+    margin-top: 10px;
+  }
+  button.addItemButton {
     margin-top: 10px;
   }
 }

@@ -32,7 +32,9 @@ function addButtons(li) {
   let removeButtonElement = document.createElement("button");
   removeButtonElement.className="remove";
   removeButtonElement.textContent="Remove";
-  // length>1 because when only one element is present, we need only remove button,no up button
+
+  // length> 1 because when no element is present, we need only remove button 
+  //in new element to be added ,no need of up button
   if(!li.previousElementSibling && !li.nextElementSibling && length > 1 ){
     li.appendChild(upButton);
   }
@@ -110,6 +112,7 @@ toggleButton.addEventListener("click", () => {
                         
 descriptionButton.addEventListener("click",() => {
   descriptionPara.innerHTML=descriptionInput.value+":";
+  descriptionInput.value="";
 });
   
 buttonItem.addEventListener("click",()=> {
