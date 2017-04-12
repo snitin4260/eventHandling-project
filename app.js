@@ -14,9 +14,6 @@ const inputItem =document.querySelector(".addItemInput");
 const removeButton = document.querySelector(".removeItem");
 const listUlChildren = listUl.children;
 
-window.addEventListener("load",()=> {
-  inputItem.focus();
-});
 
 // add buttons(up,down,remove) to li added dynamically through  buttonItem (button)
 // as well as lisitems already present in ul initially.
